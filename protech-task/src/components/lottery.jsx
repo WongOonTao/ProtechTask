@@ -47,7 +47,7 @@ const Lottery = () => {
   const [modal, setModal] = useState(false);
   const [modalBig, setModalBig] = useState(false);
   const [drawWords, setDrawWords] = useState("");
-  const novemberFirst2024 = new Date("November 1, 2024");
+  const decemberFirst2024 = new Date("December 1, 2024");
 
   // localStorage.removeItem('date');
   // localStorage.setItem('chars', JSON.stringify(chars));
@@ -243,7 +243,7 @@ const Lottery = () => {
       display: "block",
       cursor: "pointer",
       opacity:
-        drawChances == 0 || new Date(currentDate) > novemberFirst2024 ? 0.5 : 1,
+        drawChances == 0 || new Date(currentDate) > decemberFirst2024 ? 0.5 : 1,
     },
     prizeButton: {
       borderRadius: "30px",
@@ -299,7 +299,7 @@ const Lottery = () => {
             活动开始时间: 2024-06-27 00:00:00
           </div>
           <div className="col-12 text-start">
-            活动结束时间: 2024-10-30 23:59:59
+            活动结束时间: 2024-11-30 23:59:59
           </div>
           {/* <div className="col-12 text-start">活动时间总数: 30天</div> */}
         </div>
@@ -422,17 +422,17 @@ const Lottery = () => {
                 style={style.drawButton}
                 onClick={drawCharacter}
                 disabled={
-                  drawChances == 0 || new Date(currentDate) > novemberFirst2024
+                  drawChances == 0 || new Date(currentDate) > decemberFirst2024
                 }
               >
-                {new Date(currentDate) < novemberFirst2024
+                {new Date(currentDate) < decemberFirst2024
                   ? drawChances == 0
                     ? "明天继续"
                     : "抽字 (可抽 " + drawChances + " 次)"
                   : "活动结束"}
               </button>
             </div>
-            {new Date(currentDate) < novemberFirst2024 && (
+            {new Date(currentDate) < decemberFirst2024 && (
               <div className="col-6">
                 <button
                   type="button"
